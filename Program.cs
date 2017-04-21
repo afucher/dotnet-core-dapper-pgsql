@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using Dapper;
+﻿using DAO;
 using Npgsql;
 
-namespace hwapp
+namespace dapperApp
 {
     class Program
     {
@@ -13,14 +11,8 @@ namespace hwapp
         new NpgsqlConnection("Host=localhost;Username=postgres;Password=postgres;Database=dotnet"))
             {
                 sqlConnection.Open();
-
-                IEnumerable authors =
-                    sqlConnection.Query("Select * from Authors");
-
-                foreach (Author author in authors)
-                {
-                    Console.Write(author);
-                }
+                Author author = new Author(sqlConnection);
+                author.deleteAll();
 
                 sqlConnection.Close();
             }
