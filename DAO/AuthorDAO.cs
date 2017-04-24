@@ -12,7 +12,7 @@ namespace DAO
         {
             this.connection = connection;
         }
-        public void deleteAll()
+        public void DeleteAll()
         {
             this.connection.Execute(@"delete from Authors");
         }
