@@ -4,10 +4,10 @@ using Dapper;
 
 namespace DAO
 {
-    public class Author
+    public class AuthorDAO
     {
         private IDbConnection connection;
-        public Author(IDbConnection connection)
+        public AuthorDAO(IDbConnection connection)
         {
             this.connection = connection;
         }

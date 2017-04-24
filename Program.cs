@@ -11,8 +11,8 @@ namespace dapperApp
         new NpgsqlConnection("Host=localhost;Username=postgres;Password=postgres;Database=dotnet"))
             {
                 sqlConnection.Open();
-                Author author = new Author(sqlConnection);
-                author.deleteAll();
+                AuthorDAO authorDAO = new AuthorDAO(sqlConnection);
+                authorDAO.deleteAll();
 
                 sqlConnection.Close();
             }
