@@ -26,5 +26,10 @@ namespace DAO
             var result = connection.Execute(insertQuery,author);
             return author;
         }
+
+        public List<Author> FindByName(string name){
+            var selectQuery = @"select name from Authors where name = @Name";
+            return connection.Query<Author>(selectQuery,new {Name = name}).AsList();
+        }
     }
 }
