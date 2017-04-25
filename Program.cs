@@ -12,7 +12,7 @@ namespace dapperApp
             {
                 sqlConnection.Open();
                 AuthorDAO authorDAO = new AuthorDAO(sqlConnection);
-                authorDAO.deleteAll();
+                authorDAO.DeleteAll();
 
                 sqlConnection.Close();
             }
